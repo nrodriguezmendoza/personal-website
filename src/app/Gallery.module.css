@@ -1,72 +1,133 @@
 .marquee {
   width: 100%;
   overflow: hidden;
-  /* Room for the tilted/scaled photos to overhang without clipping */
+  /* Room for the tilted photos to overhang without clipping */
   padding: 1.25rem 0;
 }
 
 .track {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
   width: max-content;
   animation: scroll 30s linear infinite;
 }
 
-.track:hover {
-  animation-play-state: paused;
-}
-
-/* Track holds two copies of the photo list; sliding by -50% moves exactly
-   one full copy, so the reset is invisible and the loop looks continuous. */
+/* Track holds four copies of the photo list; sliding by -25% moves exactly
+   one full copy, so the reset is invisible and the loop looks continuous.
+   Spacing uses margin-right (not flex gap) so each copy's width — including
+   its trailing space — is exactly a quarter of the track and the seam never
+   jumps. */
 @keyframes scroll {
   from {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-25%);
   }
 }
 
+.photoButton {
+  flex: 0 0 auto;
+  margin-right: 1.25rem;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  line-height: 0;
+}
+
 .photo {
-  height: clamp(8rem, 22vw, 13rem);
+  height: clamp(8rem, 20vw, 12rem);
   width: auto;
+  /* Keep very wide (panorama) shots from dwarfing the rest */
+  max-width: clamp(11rem, 28vw, 17rem);
+  object-fit: cover;
   border-radius: 0.75rem;
   box-shadow: 0 2px 10px rgba(26, 26, 46, 0.12);
 }
 
-/* Repeating size/tilt pattern so the strip looks hand-placed. Sizes vary
-   via height (not scale) so the flex gap stays honest — rotated corners
-   overhang slightly, but boxes never collide. The cycle length (6) matches
-   the photo count so both copies of the list line up. */
-.track .photo:nth-child(6n + 1) {
-  height: clamp(7.5rem, 20vw, 12rem);
-  transform: rotate(-3deg);
+/* Gentle repeating size/tilt pattern so the strip looks hand-placed without
+   the sizes fighting each other. The cycle length (6) matches the photo
+   count so the pattern repeats identically in each copy of the list. */
+.track .photoButton:nth-child(6n + 1) .photo {
+  height: clamp(7.75rem, 19vw, 11.5rem);
+  transform: rotate(-2.5deg);
 }
 
-.track .photo:nth-child(6n + 2) {
-  height: clamp(8.5rem, 23vw, 13.5rem);
-  transform: rotate(2deg);
+.track .photoButton:nth-child(6n + 2) .photo {
+  height: clamp(8.25rem, 21vw, 12.5rem);
+  transform: rotate(1.5deg);
 }
 
-.track .photo:nth-child(6n + 3) {
-  height: clamp(7rem, 18.5vw, 11rem);
+.track .photoButton:nth-child(6n + 3) .photo {
+  height: clamp(7.75rem, 19.5vw, 11.75rem);
+  transform: rotate(-1deg);
+}
+
+.track .photoButton:nth-child(6n + 4) .photo {
+  height: clamp(8rem, 20vw, 12rem);
+  transform: rotate(2.5deg);
+}
+
+.track .photoButton:nth-child(6n + 5) .photo {
+  height: clamp(8.25rem, 21.5vw, 12.75rem);
   transform: rotate(-1.5deg);
 }
 
-.track .photo:nth-child(6n + 4) {
-  height: clamp(8rem, 22vw, 13rem);
-  transform: rotate(3deg);
+.track .photoButton:nth-child(6n + 6) .photo {
+  height: clamp(7.75rem, 19vw, 11.5rem);
+  transform: rotate(1deg);
 }
 
-.track .photo:nth-child(6n + 5) {
-  height: clamp(9rem, 24vw, 14rem);
-  transform: rotate(-2deg);
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 26, 46, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  padding: 1rem;
 }
 
-.track .photo:nth-child(6n + 6) {
-  height: clamp(7.5rem, 19.5vw, 11.75rem);
-  transform: rotate(1.5deg);
+.modal {
+  background: #fafafa;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  width: min(26rem, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 8px 30px rgba(26, 26, 46, 0.35);
+}
+
+.modalImage {
+  width: 100%;
+  max-height: 16rem;
+  object-fit: contain;
+  border-radius: 0.5rem;
+}
+
+.modalCaption {
+  margin: 0;
+  text-align: center;
+  color: #1a1a2e;
+}
+
+.modalClose {
+  align-self: center;
+  font: inherit;
+  padding: 0.45rem 1.25rem;
+  border: 1px solid #1a1a2e;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: #1a1a2e;
+  cursor: pointer;
+}
+
+.modalClose:hover {
+  background: #1a1a2e;
+  color: #fafafa;
 }
 
 @media (prefers-reduced-motion: reduce) {
