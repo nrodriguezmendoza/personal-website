@@ -1,0 +1,34 @@
+.footer {
+  /* Break out of the 1rem padding on <main> so the bar spans edge to edge */
+  width: calc(100% + 2rem);
+  margin: 4rem -1rem -1rem;
+  padding: 2.5rem 1.5rem;
+  background: #1a1a2e;
+  color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.iconLink {
+  display: inline-flex;
+  color: #cfcfe0;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.iconLink:hover {
+  color: #fafafa;
+  transform: translateY(-2px);
+}
+
+.credit {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #b8b8c8;
+}
