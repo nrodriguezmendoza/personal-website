@@ -7,7 +7,7 @@ import styles from './page.module.css'
 const LINKS = [
   { target: 'about', label: 'About Me' },
   { target: 'projects', label: 'Projects' },
-  { target: 'experience', label: 'Resume' },
+  { target: 'resume-cta', label: 'Resume' },
   { target: 'contact', label: 'Contact' },
 ]
 

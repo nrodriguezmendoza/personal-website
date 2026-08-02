@@ -7,25 +7,25 @@ import styles from './Experience.module.css'
 // timeline. `period` shows on the timeline side; swap the bracketed text.
 const EXPERIENCES = [
   {
-    period: '[Summer 2026]',
-    role: '[Role / Title]',
-    org: '[Organization]',
+    period: 'May 2026 – Present',
+    role: 'Student Computing Consultant',
+    org: 'Rice University Technology Solutions & Services',
     description:
-      '[What you worked on, the impact you had, and the tools you used. One or two sentences is plenty.]',
+      "Resolve 50+ support issues a week for 8,000+ university students and staff members by diagnosing problems over phone, tickets, and follow-ups, then translating the fix into plain instructions.",
   },
   {
-    period: '[2025 – Present]',
-    role: '[Role / Title]',
-    org: '[Organization or Club]',
+    period: 'May 2026 – July 2026',
+    role: 'Algorithms Instructor',
+    org: 'Tapia Center, Rice University',
     description:
-      '[A responsibility or project you led, and what it taught you or what changed because of it.]',
+      "Turned Boolean logic and algorithm design into hands-on, interactive lessons for 720 campers enabaling them to create an algorithm that evaluates 1,000 mock college applicants and selects 200. I also coordinated daily transitions for 180 campers with 100% on-time starts.",
   },
   {
-    period: '[2024 – 2025]',
-    role: '[Role / Title]',
-    org: '[Organization]',
+    period: 'January 2026 – May 2026',
+    role: 'Undergraduate Research Assistant',
+    org: 'Rice University',
     description:
-      '[Something you built, researched, or organized. Highlight a concrete result where you can.]',
+      'Trained Random Forest models with scikit-learn to predict Curie temperatures of ferromagnetic materials, cleaning and analyzing 20,000 material samples with pandas along the way. Cut prediction RMSE 40%, from 50K to 30K, through better preprocessing and hyperparameter tuning.',
   },
 ]
 
@@ -71,12 +71,12 @@ export default function Experience() {
         ))}
       </ol>
 
-      <div className={styles.cta}>
+      <div id="resume-cta" className={styles.cta}>
         <p className={styles.ctaText}>
-          Want to learn more? Download my résumé.
+          Want to learn more? Download my resume. 🌝
         </p>
         <a className={styles.downloadButton} href="/resume.pdf" download>
-          Download Résumé
+          Download Resume
         </a>
       </div>
     </section>
