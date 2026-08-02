@@ -1,9 +1,9 @@
 import styles from './Footer.module.css'
 
 // Edit these to point at your own profiles/inbox.
-const LINKEDIN = 'https://www.linkedin.com/in/[your-handle]'
+const LINKEDIN = 'https://www.linkedin.com/in/nathalie-rodriguez-mendoza/'
 const GITHUB = 'https://github.com/nrodriguezmendoza'
-const EMAIL = 'Nathalie@itwomen.org'
+const EMAIL = 'nr81@rice.edu'
 
 export default function Footer() {
   return (
