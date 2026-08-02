@@ -1,0 +1,163 @@
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background: #fafafa;
+  padding: 4.5rem 1.5rem 6rem;
+}
+
+.content {
+  width: 100%;
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 2.5rem;
+  color: #4a4a5e;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+.header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 0.85rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9a9aae;
+}
+
+.title {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.5rem, 3.4vw, 1.9rem);
+  line-height: 1.2;
+}
+
+.techList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.tech {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #e2e2ea;
+  border-radius: 0.5rem;
+  color: #4a4a5e;
+  background: rgba(26, 26, 46, 0.04);
+}
+
+/* The picture sits on its own, centered by the content column, a hairline
+   ring plus a soft lift off the page background (same recipe as the card
+   treatment used elsewhere on the site). */
+.image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid #e2e2ea;
+  border-radius: 1rem;
+  box-shadow: 0 16px 40px rgba(26, 26, 46, 0.1);
+  margin: 0 0 4rem;
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  padding: 2.75rem 0;
+  border-top: 1px solid #e2e2ea;
+}
+
+.section:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.section:last-child {
+  padding-bottom: 0;
+}
+
+.sectionMeta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  margin-bottom: 0.85rem;
+}
+
+.sectionIndex {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: #9a9aae;
+}
+
+.sectionHeading {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #4a4a5e;
+}
+
+.sectionBody {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.sectionFigure {
+  margin: 1.75rem 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sectionImage {
+  display: block;
+  width: 100%;
+  max-width: 34rem;
+  height: auto;
+  border: 1px solid #e2e2ea;
+  border-radius: 0.75rem;
+  box-shadow: 0 12px 28px rgba(26, 26, 46, 0.14);
+}
+
+.sectionCaption {
+  margin: 0.9rem 0 0;
+  font-size: 1rem;
+  color: #4a4a5e;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 2.5rem 1.25rem 4rem;
+  }
+
+  .image {
+    margin-bottom: 2.75rem;
+  }
+
+  .section {
+    padding: 2rem 0;
+  }
+}

@@ -1,42 +1,11 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { createPortal } from 'react-dom'
+import Link from 'next/link'
+import { PROJECTS, type Project } from './projects/data'
 import styles from './Projects.module.css'
 
-// Add/edit projects here. Each entry renders one card; clicking it opens a
-// modal with the fuller `details` text. Drop matching images into
-// public/images/ (project1.jpg, project2.jpg, ...).
-const PROJECTS = [
-  {
-    src: '/images/project1.svg',
-    title: '[Project name]',
-    description: '[One-line summary shown on the card]',
-    details:
-      '[A longer paragraph for the modal — what it does, your role, and the outcome.]',
-    tech: ['React', 'TypeScript', 'Next.js'],
-  },
-  {
-    src: '/images/project2.svg',
-    title: '[Project name]',
-    description: '[One-line summary shown on the card]',
-    details:
-      '[A longer paragraph for the modal — what it does, your role, and the outcome.]',
-    tech: ['Python', 'Flask', 'PostgreSQL'],
-  },
-  {
-    src: '/images/project3.svg',
-    title: '[Project name]',
-    description: '[One-line summary shown on the card]',
-    details:
-      '[A longer paragraph for the modal — what it does, your role, and the outcome.]',
-    tech: ['Figma', 'CSS', 'Accessibility'],
-  },
-]
-
-type Project = (typeof PROJECTS)[number]
-
-// Rendered in both the card and the modal, so it lives in one place.
+// Rendered in both the card and the detail page, so it lives in one place.
 function TechTags({ tech }: { tech: string[] }) {
   return (
     <ul className={styles.techList}>
@@ -49,17 +18,12 @@ function TechTags({ tech }: { tech: string[] }) {
   )
 }
 
-// One project card. Self-contained and driven only by its props — copy this
-// (or add a PROJECTS entry) to show another project.
-function ProjectCard({
-  project,
-  onOpen,
-}: {
-  project: Project
-  onOpen: () => void
-}) {
+// One project card linking to its own /projects/<slug> page. Self-contained
+// and driven only by its props — copy this (or add a PROJECTS entry) to show
+// another project.
+function ProjectCard({ project }: { project: Project }) {
   return (
-    <button className={styles.card} onClick={onOpen}>
+    <Link className={styles.card} href={`/projects/${project.slug}`}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img className={styles.cardImage} src={project.src} alt={project.title} />
       <div className={styles.cardBody}>
@@ -67,14 +31,13 @@ function ProjectCard({
         <p className={styles.cardDesc}>{project.description}</p>
         <TechTags tech={project.tech} />
       </div>
-    </button>
+    </Link>
   )
 }
 
 export default function Projects() {
   const sectionRef = useRef<HTMLElement>(null)
   const [visible, setVisible] = useState(false)
-  const [openProject, setOpenProject] = useState<Project | null>(null)
 
   useEffect(() => {
     const section = sectionRef.current
@@ -100,43 +63,10 @@ export default function Projects() {
     >
       <h2 className={styles.heading}>Projects</h2>
       <div className={styles.grid}>
-        {PROJECTS.map((project, i) => (
-          <ProjectCard
-            key={i}
-            project={project}
-            onOpen={() => setOpenProject(project)}
-          />
+        {PROJECTS.map((project) => (
+          <ProjectCard key={project.slug} project={project} />
         ))}
       </div>
-
-      {openProject &&
-        createPortal(
-          <div
-            className={styles.overlay}
-            onClick={() => setOpenProject(null)}
-            role="dialog"
-            aria-modal="true"
-            aria-label={openProject.title}
-          >
-            <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-              <button
-                className={styles.modalClose}
-                onClick={() => setOpenProject(null)}
-                aria-label="Close"
-              >
-                ×
-              </button>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className={styles.modalImage} src={openProject.src} alt="" />
-              <div className={styles.modalBody}>
-                <h3 className={styles.modalTitle}>{openProject.title}</h3>
-                <p className={styles.modalDetails}>{openProject.details}</p>
-                <TechTags tech={openProject.tech} />
-              </div>
-            </div>
-          </div>,
-          document.body
-        )}
     </section>
   )
 }
