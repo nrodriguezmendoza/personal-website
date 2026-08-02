@@ -29,44 +29,45 @@ export default function About() {
       ref={sectionRef}
       className={`${styles.about} ${visible ? styles.visible : ''}`}
     >
-      <h2 className={styles.heading}>About Me</h2>
+      <h2 className={styles.heading}>About Me 🍚</h2>
       <div className={styles.columns}>
         <div className={styles.bio}>
           {/* Placeholder copy — replace with your own story */}
           <p>
-            Hi! I&apos;m Nathalie, a computer science student at Rice University.
-            I grew up in [hometown], where I first fell in love with [what got
-            you into CS — a robotics club, a game you modded, a website you
-            hacked together].
+            Hi! I&apos;m Nathalie, a computer science student at Rice University, and
+            my mom&apos;s the real reason I&apos;m interested in tech.
+            After our family immigrated from Cuba, she taught herself to repair
+            computers from scratch just to bring in extra income, and I grew up
+            watching her fix things most people would&apos;ve thrown away. That&apos;s
+            basically why I joined a robotics team in high school: I wanted to
+            build stuff too, not just watch. I ended up as the team&apos;s lead
+            programmer, and that&apos;s what pulled me toward computer science for
+            good.
           </p>
           <p>
-            These days I spend my time on [current projects, clubs, or
-            research], and I&apos;m especially interested in [areas you care
-            about — web development, AI, accessibility, design]. Outside of
-            class you&apos;ll find me [hobbies — photography, hiking, baking,
-            volunteering].
-          </p>
-          <p>
-            I&apos;m always excited to meet people building cool things — feel
-            free to reach out!
+            These days that shows up as way too many personal projects (this
+            website included), and a growing obsession with full-stack
+            development and AI. Outside of class, I&apos;m either thrifting for
+            something no one else will find cool, or wandering campus with a
+            camera taking pictures of the squirells! 🐿️
           </p>
         </div>
         <ul className={styles.facts}>
           <li className={styles.fact}>
             <span className={styles.factLabel}>School</span>
-            Rice University, CS &apos;28
+            Rice University, CS &apos;29
           </li>
           <li className={styles.fact}>
             <span className={styles.factLabel}>Interests</span>
-            [Web dev · Design · Community]
+            Web dev · Design · Community Impact
           </li>
           <li className={styles.fact}>
             <span className={styles.factLabel}>Currently</span>
-            [What you&apos;re working on]
+            I'm in the planning phase of a backend focused project, trying to expand my knowledge of databses and APIs.
           </li>
           <li className={styles.fact}>
             <span className={styles.factLabel}>Fun fact</span>
-            [Something memorable]
+            I met Lewis Hamilton & Charles Leclerc at a school event (there's photo evidence, ask me to see it!) 🏎️
           </li>
         </ul>
       </div>

@@ -1,6 +1,6 @@
 .about {
   width: 100%;
-  max-width: 52rem;
+  max-width: 60rem;
   margin: 0 auto;
   /* No bottom padding: the following section's top padding supplies the gap,
      so the two don't stack into a double-height space. */
@@ -25,7 +25,7 @@
 .columns {
   display: flex;
   gap: 2.5rem;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .bio {
