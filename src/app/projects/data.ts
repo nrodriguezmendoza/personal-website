@@ -56,7 +56,7 @@ export const PROJECTS: Project[] = [
     title: 'Feeding South Florida Access Map',
     description:
       'A geospatial platform ranking food-access indicators to guide outreach across four counties.',
-    tech: ['Python', 'FastAPI', 'PostgreSQL', 'MapLibre GL'],
+    tech: ['Python', 'PostgreSQL', 'MapLibre GL'],
     sections: [
       {
         heading: 'The problem',

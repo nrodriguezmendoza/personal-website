@@ -96,6 +96,10 @@
   color: #33333f;
 }
 
+.description + .description {
+  margin-top: 0.6rem;
+}
+
 .cta {
   display: flex;
   flex-direction: column;

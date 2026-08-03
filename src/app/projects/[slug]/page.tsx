@@ -34,7 +34,6 @@ export default async function ProjectPage({
         </Link>
 
         <header className={styles.header}>
-          <p className={styles.eyebrow}>Case study</p>
           <h1 className={styles.title}>{project.title}</h1>
           <ul className={styles.techList}>
             {project.tech.map((t) => (

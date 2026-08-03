@@ -28,15 +28,6 @@
   text-align: center;
 }
 
-.eyebrow {
-  margin: 0 0 0.85rem;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.8rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #9a9aae;
-}
-
 .title {
   margin: 0 0 1.25rem;
   font-size: clamp(1.5rem, 3.4vw, 1.9rem);
