@@ -81,12 +81,32 @@ export const PROJECTS: Project[] = [
     src: '/images/equibirth-coming-soon.svg',
     title: 'Equibirth AI',
     description:
-      "Actively building ML models with a team at AI4ALL to predict preterm birth. More info coming soon.",
-    tech: ['Python', 'Machine Learning'],
+      'Building ML models with a team at AI4ALL to predict preterm birth and check whether they hold up fairly across racial and socioeconomic groups.',
+    tech: ['Python', 'Logistic Regression', 'Random Forest', 'XGBoost', 'LightGBM', 'FairLearn'],
     sections: [
       {
-        heading: 'Coming soon',
-        body: "I'm currently working with a team through AI4ALL to build machine learning models that predict preterm birth. More info coming soon as the project moves along.",
+        heading: 'The problem',
+        body: "Preterm birth, born before 37 weeks, is one of the leading causes of newborn death, and it doesn't affect everyone equally. About 10.4% of U.S. births in 2023 were preterm, and Black women experience meaningfully higher rates of both preterm birth and pregnancy-related mortality than white women. Since a lot of that harm is preventable, we wanted to understand what's actually driving the gap: maternal health, healthcare access, socioeconomic conditions, or some mix of all three.",
+      },
+      {
+        heading: 'The approach',
+        body: "Our team, EquiBirth AI, is working through AI4ALL to build models that predict preterm birth from 3.5 million CDC natality records covering maternal demographics, prenatal care, and birth outcomes. We built an end-to-end pipeline comparing logistic regression, decision tree, random forest, XGBoost, and LightGBM models against each other. Everything we feed the models has to be information available before delivery, so a big part of the pipeline is making sure nothing that only exists after birth sneaks in and inflates the results.",
+      },
+      {
+        heading: 'Fairness, not just accuracy',
+        body: "A model that predicts preterm birth well but performs worse for the groups already experiencing the worst outcomes isn't actually useful. Birth outcome disparities reflect real structural inequities, so we don't want a model to launder those patterns as if they were neutral, we want to know exactly where it's falling short and for whom.",
+      },
+      {
+        heading: 'My role',
+        body: "I developed and evaluated the logistic regression model on 103 engineered pre-delivery features, and worked on the pipeline that let us compare it against the decision tree, random forest, XGBoost, and LightGBM models on equal footing. I also built the automated leakage checks that catch features that wouldn't actually be known before birth, which ended up excluding 57 post-delivery variables. Running the models without them dropped AUC-ROC from 0.93 to 0.65, a big enough gap to show that most of that earlier performance was leakage, not real signal. On the fairness side, I conducted an audit across seven racial and ethnic groups using equal opportunity, demographic parity, disparate impact, and bootstrap confidence intervals to see how consistently the model performs group by group.",
+      },
+      {
+        heading: 'The team',
+        body: "I'm working on this through AI4ALL alongside Bhavika Kothapalli, Parshv Patel, Shanghim Nadia Woo, Pramish Pandey, Andrew Pierre, and Bhavya Agarwal.",
+      },
+      {
+        heading: "What's next",
+        body: "With the leakage checks in place and a first fairness audit done, we're now digging into where those fairness metrics diverge across groups and tightening the models up on the valid, pre-delivery-only feature set. More findings coming soon as the project moves along.",
       },
     ],
   },
