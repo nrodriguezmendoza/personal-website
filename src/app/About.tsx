@@ -32,24 +32,33 @@ export default function About() {
       <h2 className={styles.heading}>About Me 🍚</h2>
       <div className={styles.columns}>
         <div className={styles.bio}>
-          {/* Placeholder copy — replace with your own story */}
           <p>
-            Hi! I&apos;m Nathalie, a computer science student at Rice University, and
-            my mom&apos;s the real reason I&apos;m interested in tech.
-            After our family immigrated from Cuba, she taught herself to repair
-            computers from scratch just to bring in extra income, and I grew up
-            watching her fix things most people would&apos;ve thrown away. That&apos;s
-            basically why I joined a robotics team in high school: I wanted to
-            build stuff too, not just watch. I ended up as the team&apos;s lead
-            programmer, and that&apos;s what pulled me toward computer science for
-            good.
+            Hi! I&apos;m Nathalie, a computer science student at Rice University,
+            and my interest in tech really started with my mom. After our
+            family immigrated from Cuba, she taught herself how to repair
+            computers to bring in extra income. I grew up watching her fix
+            computers most people would have thrown away and explain what all
+            the different parts did along the way.
           </p>
           <p>
-            These days that shows up as way too many personal projects (this
-            website included), and a growing obsession with full-stack
-            development and AI. Outside of class, I&apos;m either thrifting for
-            something no one else will find cool, or wandering campus with a
-            camera taking pictures of the squirells! 🐿️
+            That&apos;s a big part of why I started an all-girls robotics team in
+            high school. I wanted to build things too, not just watch. I
+            became the team&apos;s lead programmer, and somewhere between
+            debugging our robot and watching it finally do what I wanted, I
+            realized how much I liked solving problems through code.
+          </p>
+          <p>
+            Now, that interest shows up as way too many personal projects
+            (this website included) and a growing love for full-stack
+            development and AI. I especially like building things people can
+            actually use, whether that means helping a nonprofit figure out
+            where to expand its food outreach or replacing a stack of paper
+            forms with something easier.
+          </p>
+          <p>
+            When I&apos;m not coding, I&apos;m probably thrifting for something no one
+            else will find cool or wandering around campus with my camera,
+            taking pictures of the squirrels. 🐿️
           </p>
         </div>
         <ul className={styles.facts}>
