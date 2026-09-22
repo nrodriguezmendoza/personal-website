@@ -18,7 +18,7 @@ const EXPERIENCES = [
     role: 'Algorithms Instructor',
     org: 'Tapia Center, Rice University',
     description:
-      "Turned Boolean logic and algorithm design into hands-on, interactive lessons for 720 campers enabaling them to create an algorithm that evaluates 1,000 mock college applicants and selects 200. I also coordinated daily transitions for 180 campers with 100% on-time starts.<br>This was one of the most rewarding experiences I've had, and I loved getting to teach a subject I love to students from all backgrounds and skill levels. I also learned a lot about how to communicate complex ideas in a way that makes sense to people who are new to the topic. 💛",
+      "Turned Boolean logic and algorithm design into hands-on, interactive lessons for 600+ campers enabaling them to create an algorithm that evaluates 1,000 mock college applicants and selects 200. I also coordinated daily transitions for 180 campers with 100% on-time starts.<br>This was one of the most rewarding experiences I've had, and I loved getting to teach a subject I love to students from all backgrounds and skill levels. I also learned a lot about how to communicate complex ideas in a way that makes sense to people who are new to the topic. 💛",
   },
   {
     period: 'January 2026 – May 2026',
