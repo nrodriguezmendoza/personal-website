@@ -82,7 +82,7 @@ export const PROJECTS: Project[] = [
     title: 'Equibirth AI',
     description:
       'Building ML models with a team at AI4ALL to predict preterm birth and check whether they hold up fairly across racial and socioeconomic groups.',
-    tech: ['Python', 'Logistic Regression', 'Random Forest', 'XGBoost', 'LightGBM', 'FairLearn'],
+    tech: ['Python', 'NumPy', 'scikit-learn'],
     sections: [
       {
         heading: 'The problem',
@@ -103,10 +103,6 @@ export const PROJECTS: Project[] = [
       {
         heading: 'The team',
         body: "I'm working on this through AI4ALL alongside Bhavika Kothapalli, Parshv Patel, Shanghim Nadia Woo, Pramish Pandey, Andrew Pierre, and Bhavya Agarwal.",
-      },
-      {
-        heading: "What's next",
-        body: "With the leakage checks in place and a first fairness audit done, we're now digging into where those fairness metrics diverge across groups and tightening the models up on the valid, pre-delivery-only feature set. More findings coming soon as the project moves along.",
       },
     ],
   },
